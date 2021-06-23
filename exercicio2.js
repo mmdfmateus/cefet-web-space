@@ -76,3 +76,6 @@ const imagens = [
     currentImage.src = servidorDasImagens + '/' + nextImage.arquivo;
     currentImage.alt = nextImage.descricao;
   }
+
+  document.querySelector('#anterior').addEventListener('click', previous);
+  document.querySelector('#proximo').addEventListener('click', next);

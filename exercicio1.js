@@ -11,3 +11,5 @@ const calculateGravitalForce = () => {
 
     document.querySelector('#resultado').value = result;
 }
+
+document.querySelector('#calcular').addEventListener('click', calculateGravitalForce);
