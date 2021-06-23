@@ -2,6 +2,7 @@
 // Este arquivo AINDA NÃO ESTÁ INCLUÍDO no arquivo HTML
 
 const servidorDasImagens = 'https://fegemo.github.io/cefet-web/images/osiris';
+let currentImageIndex = 0;
 const imagens = [
     {
       arquivo: 'modelo-artistico-da-sonda.webp',
@@ -48,3 +49,30 @@ const imagens = [
     }
   ];
 
+  const next = () => {
+    if(currentImageIndex == imagens.length - 1){
+      currentImageIndex = 0;
+    } else {
+      currentImageIndex++;
+    }
+    
+    const currentImage = document.querySelector('#slide');
+    const nextImage = imagens[currentImageIndex];
+
+    currentImage.src = servidorDasImagens + '/' + nextImage.arquivo;
+    currentImage.alt = nextImage.descricao;
+  }
+
+  const previous = () => {
+    if(currentImageIndex == 0){
+      currentImageIndex = imagens.length - 1;
+    } else {
+      currentImageIndex--;
+    }
+    
+    const currentImage = document.querySelector('#slide');
+    const nextImage = imagens[currentImageIndex];
+
+    currentImage.src = servidorDasImagens + '/' + nextImage.arquivo;
+    currentImage.alt = nextImage.descricao;
+  }
